@@ -5,7 +5,7 @@ using UnityEngine;
 public class BounceBehaviour : MonoBehaviour
 {
     //Variables declaration (PUBLIC)
-    public float force = 10f;
+    public float force = 100f;
     public float hitTime = 0.5f;
 
     //Direction it is going when collided with the Player.

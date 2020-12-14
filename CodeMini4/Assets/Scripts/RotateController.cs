@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RotateController : MonoBehaviour
 {
-    public float speed = 3f;
+    public float speed = 100f;
 
     void Start()
     {

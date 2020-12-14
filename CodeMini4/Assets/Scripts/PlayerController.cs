@@ -48,7 +48,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        
         float hAxis = Input.GetAxis("Horizontal");
         float vAxis = Input.GetAxis("Vertical");
 
@@ -86,7 +85,7 @@ public class PlayerController : MonoBehaviour
             //Player Die
             if (gameObject.transform.position.y <= -5)
             {
-                gameObject.transform.position = new Vector3(0, 1, 0);
+                transform.position = new Vector3(0, 1, 0);
             }
         }
 
