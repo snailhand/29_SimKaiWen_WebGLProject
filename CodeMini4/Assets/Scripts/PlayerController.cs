@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public float maxSpeedChange = 10f;
     public float jumpHeight = 10f;
     public float fallSpeed = 20f;
-    public float rotateSpeed = 25f; 
+    public float rotateSpeed = 25f;
 
     //Player variables declaration (PRIVATE)
     private float aboveGround;
@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     //Player Components referencing (PRIVATE)
     private Vector3 moveDirection;
     private Rigidbody playerRb;
-    
+
     public GameObject cameraObject; //Camera Reference 
 
     void Start()
@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.CompareTag("Ground"))
+        if (collision.collider.CompareTag("Ground"))
         {
             isOnGround = true;
         }
@@ -100,11 +100,11 @@ public class PlayerController : MonoBehaviour
         pushForce = force.magnitude;
         pushDirection = Vector3.Normalize(force);
         StartCoroutine(Decrease(force.magnitude, time));
-        
+
     }
     private IEnumerator Decrease(float value, float duration)
     {
-        if(isStunned == true)
+        if (isStunned == true)
         {
             stunnedState = true;
         }
@@ -145,4 +145,5 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
+
 }
