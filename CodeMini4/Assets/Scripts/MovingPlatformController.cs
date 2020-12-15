@@ -10,8 +10,9 @@ public class MovingPlatformController : MonoBehaviour
     bool forward =true;
     public float zlimit = 0f;
     public float startPos = 20f;
-    bool movingP ;
-    // Start is called before the first frame update
+
+    bool movingP;  //Condition is true when Player is riding the Moving Platform
+    
     void Start()    
     {
         
@@ -31,7 +32,7 @@ public class MovingPlatformController : MonoBehaviour
 
         if (transform.position.z <= zlimit && transform.position.z <= startPos) //40
         {
-            forward = true; // go 20 >40
+            forward = true; // go 20 to 40
         }   
         if (transform.position.z >= startPos && transform.position.z >= zlimit) //20
         {
@@ -41,10 +42,18 @@ public class MovingPlatformController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        //collision.collider is player Reference
+
         if (collision.gameObject.CompareTag("Player"))
         {
-            movingP = true;
-            
+            movingP = true;  //riding
+            collision.collider.transform.SetParent(transform);
         }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        movingP = false; //Not riding
+        collision.collider.transform.SetParent(null);
     }
 }

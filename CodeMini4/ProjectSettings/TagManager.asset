@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - BeyBlade
+  - Ball
   layers:
   - Default
   - TransparentFX

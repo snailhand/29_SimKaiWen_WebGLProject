@@ -127,6 +127,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 906e969e10a6db94995728d271f03f02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  followSpeed: 3
+  mouseSpeed: 3
+  cameraDistance: 3
+  player: {fileID: 0}
+  pivot: {fileID: 0}
+  cameraPos: {fileID: 0}
+  minAngle: -35
+  maxAngle: 35
+  lookAngle: 0
+  tiltAngle: 0
 --- !u!1 &7819886646747319987
 GameObject:
   m_ObjectHideFlags: 0

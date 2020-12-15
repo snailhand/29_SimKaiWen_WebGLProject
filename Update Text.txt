@@ -3,3 +3,6 @@ Player will move with respect to the horizontal and vertical axis of the camera.
 
 Player will bounce off Obstacles when coming into contact with them.
 
+Added Slippery, Bouncy and Normal surfaces
+
+Moving Door is randomly slide
