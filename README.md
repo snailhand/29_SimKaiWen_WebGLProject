@@ -1,1 +1,4 @@
-# CodeMini4
+# Group Members:
+
+# Edmund, Zack, Lloyd, KaiWen
+.
