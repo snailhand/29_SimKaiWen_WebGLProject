@@ -83,9 +83,9 @@ public class PlayerController : MonoBehaviour
             }
 
             //Player Die
-            if (gameObject.transform.position.y <= -5)
+            if (gameObject.transform.position.y <= -11)
             {
-                transform.position = new Vector3(0, 1, 0);
+                transform.position = new Vector3(0, 1, 413);
             }
         }
 
