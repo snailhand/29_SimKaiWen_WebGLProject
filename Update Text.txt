@@ -1,8 +1,7 @@
 
-Player will move with respect to the horizontal and vertical axis of the camera.
+Added Win Scene, Lose Scene and Title Screen
 
-Player will bounce off Obstacles when coming into contact with them.
+*IMPORTANT*
 
-Added Slippery, Bouncy and Normal surfaces
+During playtests, run on preload scene.
 
-Moving Door is randomly slide
