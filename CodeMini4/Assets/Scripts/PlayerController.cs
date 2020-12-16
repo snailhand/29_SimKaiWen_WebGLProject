@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight = 10f;
     public float fallSpeed = 20f;
     public float rotateSpeed = 25f;
+    public int lifeCount = 3;
 
     //Player variables declaration (PRIVATE)
     private float aboveGround;
@@ -28,13 +31,12 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRb;
 
     public GameObject cameraObject; //Camera Reference 
+    public GameObject lifeText; //LivesCount Reference
+
 
     void Start()
     {
-        Physics.gravity *= gravityMod;
         playerRb = GetComponent<Rigidbody>();
-        //Calculating distance above ground
-        aboveGround = GetComponent<Collider>().bounds.extents.y;
 
     }
 
@@ -50,6 +52,11 @@ public class PlayerController : MonoBehaviour
     {
         float hAxis = Input.GetAxis("Horizontal");
         float vAxis = Input.GetAxis("Vertical");
+
+        //Displaying Lives Text
+        lifeText.GetComponent<Text>().text = "Lives: " + lifeCount;
+
+        print(lifeCount);
 
         if (canMove == true)
         {
@@ -82,11 +89,20 @@ public class PlayerController : MonoBehaviour
 
             }
 
-            //Player Die
+            //Player Drop down
             if (gameObject.transform.position.y <= -11)
             {
-                transform.position = new Vector3(0, 1, 413);
+                if (lifeCount > 0) //still have remaining lives
+                {
+                    transform.position = new Vector3(0, 1, 413);
+                    lifeCount -= 1;
+                }
             }
+            if (lifeCount == 0)
+            {
+                SceneManager.LoadScene("LoseScene");
+            }
+           
         }
 
         Vector3 axisV = vAxis * cameraObject.transform.forward;
