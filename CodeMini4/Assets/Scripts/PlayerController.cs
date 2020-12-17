@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         //Displaying Lives Text
         lifeText.GetComponent<Text>().text = "Lives: " + lifeCount;
 
-        print(lifeCount);
+        //print(GameManager.gameManager.ballObject);
 
         if (canMove == true)
         {
@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour
             }
 
             //Player Drop down
-            if (gameObject.transform.position.y <= -11)
+            if (gameObject.transform.position.y < -11)
             {
                 if (lifeCount > 0) //still have remaining lives
                 {
@@ -153,7 +153,8 @@ public class PlayerController : MonoBehaviour
             canMove = true;
         }
     }
-
+    
+    
     private void Moving()
     {
         //lol this took me longer than I should've
@@ -163,3 +164,4 @@ public class PlayerController : MonoBehaviour
     }
 
 }
+    

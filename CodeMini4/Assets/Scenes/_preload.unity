@@ -190,8 +190,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5e2cbbc7307e254ca8c338eff06c7c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ballObject: {fileID: 4826840176232785102, guid: 84b9463ba0357864e86eed9d83afa4e3,
+    type: 3}
   Player: {fileID: 99960652}
   gravityMod: 5
+  isWaiting: 0
+  count: 0
 --- !u!1 &312848361
 GameObject:
   m_ObjectHideFlags: 0
