@@ -1,7 +1,0 @@
-
-Added Win Scene, Lose Scene and Title Screen
-
-*IMPORTANT*
-
-During playtests, run on preload scene.
-
