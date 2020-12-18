@@ -9,10 +9,12 @@ public class GameManager : MonoBehaviour
 
     public GameObject ballObject;
     public GameObject Player;
+    public GameObject winObject;
 
     public float gravityMod = 3f;
     public bool isWaiting;
     public int count = 0;
+    public float rotateSpeed;
 
     private float ballSpeed = 100f;
     private int ballLimit = 1000;
@@ -35,7 +37,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //ballObject.transform.Translate(Vector3.forward * Time.deltaTime * ballSpeed);
 
         if (ballSpawn == true)
         {

@@ -193,9 +193,12 @@ MonoBehaviour:
   ballObject: {fileID: 4826840176232785102, guid: 84b9463ba0357864e86eed9d83afa4e3,
     type: 3}
   Player: {fileID: 99960652}
+  winObject: {fileID: 2252918335929623941, guid: c4d95a852e7fbc34994517bb65113f27,
+    type: 3}
   gravityMod: 5
   isWaiting: 0
   count: 0
+  rotateSpeed: 100
 --- !u!1 &312848361
 GameObject:
   m_ObjectHideFlags: 0

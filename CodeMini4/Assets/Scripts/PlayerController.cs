@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject cameraObject; //Camera Reference 
     public GameObject lifeText; //LivesCount Reference
+    public Animator playerAnim; //Animation Reference
 
 
     void Start()
@@ -50,6 +51,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
         float hAxis = Input.GetAxis("Horizontal");
         float vAxis = Input.GetAxis("Vertical");
 
@@ -94,7 +96,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (lifeCount > 0) //still have remaining lives
                 {
-                    transform.position = new Vector3(0, 1, 413);
+                    transform.position = new Vector3(0, 16.5f, 334);
                     lifeCount -= 1;
                 }
             }
@@ -160,7 +162,14 @@ public class PlayerController : MonoBehaviour
         //lol this took me longer than I should've
 
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        {
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            playerAnim.SetBool("isWalking", true);
+        }
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+        {
+            playerAnim.SetBool("isWalking", false);
+        }
     }
 
 }
